@@ -10,10 +10,10 @@ data "template_file" "init" {
 resource "aws_launch_configuration" "lc" {
   name_prefix                 = "playground-"
   image_id                    = data.aws_ami.amazon-linux-2.id
-  instance_type               = "t2.small"
+  instance_type               = "t2.micro"
   security_groups             = [var.security_group_id]
   user_data                   = data.template_file.init.rendered
-  key_name                    = "playground-november-key"
+  key_name                    = "devops"
   associate_public_ip_address = true
   iam_instance_profile        = aws_iam_instance_profile.deploy_profile.name
 

@@ -7,6 +7,6 @@ terraform {
   backend "s3" {
     encrypt = true
     bucket  = "dpg-november-tfstate-bucket"
-    region  = "eu-west-2"
+    region  = "us-east-1"
   }
 }
